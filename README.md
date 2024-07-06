@@ -7,3 +7,5 @@
 - Github
 - AWS
 - Docker
+
+### Create virtual environment with python 3.8
