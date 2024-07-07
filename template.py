@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-project_name = "visa approval"
+project_name = "visa_approval"
 
 file_list = [
 
