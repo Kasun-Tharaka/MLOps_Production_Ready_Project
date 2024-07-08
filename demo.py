@@ -1,4 +1,4 @@
-from visa_approval import logging
+from visa_approval.logger import logging
 
 logging.info('checking the logging works')
 
