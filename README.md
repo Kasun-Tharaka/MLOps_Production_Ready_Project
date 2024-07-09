@@ -10,8 +10,11 @@
 
 ### Create virtual environment with python 3.8
 
-## Steps
+## Steps(Notebook experiments)
 - Create a virtual environment
 - Create project template
 - add requirements
 - load dataset and setup DB connection
+- implement logging
+- implement custom exception
+- implement utils
