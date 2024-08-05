@@ -1,11 +1,4 @@
-from visa_approval.logger import logging
-from visa_approval.exception import visa_approvalException
-import sys
+from visa_approval.pipeline.training_pipeline import TrainPipeline
 
-logging.info('checking the logging works')
-
-
-try:
-    a = 5/0
-except Exception as e:
-    raise visa_approvalException(e, sys)
+obj = TrainPipeline()
+obj.run_pipeline()
