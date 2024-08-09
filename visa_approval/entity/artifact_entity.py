@@ -1,3 +1,4 @@
+# here is nothing but, what are the outputs after the evry component.
 from dataclasses import dataclass
 
 
@@ -5,3 +6,10 @@ from dataclasses import dataclass
 class DataIngestionArtifact:
     trained_file_path:str 
     test_file_path:str 
+
+
+@dataclass
+class DataValidationArtifact:
+    validation_status:bool
+    message: str
+    drift_report_file_path: str
