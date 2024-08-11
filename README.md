@@ -64,3 +64,17 @@
 - update the constants, entities(config and artifacts), comonents, 
 
 - data validation, if majority of columns are data drift, then return False. Otherwise majority of columns are not data drift, consider as not data drift, so return True.
+
+- if data drift is detected, fix it manually and update the database.(do resampling, if it not working try to increase the number of data)
+
+-start the data transformation(implement feature engineering which done in notebook)
+- output of data validation willa be the input for the data transformation.
+- first update the constants for data transformation, then update the entity(config entity - proper paths foe my constants), then update the components
+- inside etity, new file created as estimator(a class for target column encoding)
+- update the pipeline for data transformation
+
+- jump into the model training
+- in notebook, we trained multiple models and done hyperparameter tuning manually. we need convert into modular coding. that manual task will automated by some pakage call neuro_mf. so we are ging to use it here.
+- to use neuro_mf, have to write a yamal inside config files which we gonna use model & parameters.
+- in the seperate folder called estimator, create a class for do predictions with the test data avoiding writing in the trainig pipeline
+- first update the constants, and entities(config and artifacts), and components, and pipeline

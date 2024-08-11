@@ -36,7 +36,7 @@ def load_object(file_path :str) -> object:
 
     try:
         with open(file_path, 'rb') as file_obj:
-            obj = dill.load_object(file_obj)
+            obj = dill.load(file_obj)
         logging.info('Executed load_object method of utils')
         
         return obj
