@@ -22,6 +22,13 @@ SCHEMA_FILE_PATH = os.path.join('config', 'schema.yaml')
 # create during data transformation
 PREPROCSSING_OBJECT_FILE_NAME = "preprocessing.pkl"
 
+
+# AWS credentials
+AWS_ACCESS_KEY_ID_ENV_KEY = "AWS_ACCESS_KEY_ID"
+AWS_SECRET_ACCESS_KEY_ENV_KEY = "AWS_SECRET_ACCESS_KEY"
+REGION_NAME = "eu-north-1"
+
+
 # Data Ingestion constants
 DATA_INGESTION_COLLECTION_NAME: str = "visa_data"
 DATA_INGESTION_DIR_NAME: str = "data_ingestion" # inside artifacts this will be centered
@@ -48,3 +55,14 @@ MODEL_TRAINER_TRAINED_MODEL_DIR: str = "trained_model"
 MODEL_TRAINER_TRAINED_MODEL_NAME: str = "model.pkl"
 MODEL_TRAINER_EXPECTED_SCORE: float = 0.6
 MODEL_TRAINER_MODEL_CONFIG_FILE_PATH: str = os.path.join("config", "model.yaml")
+
+
+# Model Evaluation constants
+MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.02
+MODEL_BUCKET_NAME = "usvisa-model2024"
+MODEL_PUSHER_S3_KEY = "model-registry"
+
+
+# Model Predictions constants
+APP_HOST = "0.0.0.0"
+APP_PORT = "8080"

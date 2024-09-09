@@ -78,3 +78,30 @@
 - to use neuro_mf, have to write a yamal inside config files which we gonna use model & parameters.
 - in the seperate folder called estimator, create a class for do predictions with the test data avoiding writing in the trainig pipeline
 - first update the constants, and entities(config and artifacts), and components, and pipeline
+
+- first model evaluation, model pusher to production (amazon S3), prediction pipeline
+- for model evaluation, it requires model.pkl (in artifacts/trainer) and test.csv (from data ingersion) and difine a threshold for model accuracy.
+- after evaluation, if the model accuracy is higher than the threshold value it returns True. this return value based for start next stage call model pusher.
+- in first time going to run pipeline, in S3 there is no any model. so our first model should push through the model pusher, whatever accuracy is.
+- when run pipeline again, there is a model in S3. at this point inside evaluation using test data evaluate both model and check whether what model perform better. If new train model's accuracy is higher then run model pusher. otherwise model pusher wont execute.
+- starting evaluation updating constants and add AWS credentials into constants,
+export credentials in cmd
+
+export MONGODB_URL="mongodb+srv://<username>:<password>...."
+
+export AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY_ID>
+
+export AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY>
+
+after create system environment variables for above credentials.
+- create a file in configuration to make aws connection.(same as for mongodb)
+
+- create another folder inside visa approval call cloud storage(with constructor file). inside this file contains all the operations happens on cloud, which are how to push model, get current model(file contains all of the operations about on AWS, but now we dont need to use all of those operations)
+
+- cteate estimator file inside entity for estimate S3 producttion(uploaded) model, loading and making predictions to whether it is fine or not
+
+- update entities(config & artifacts), and components, then trainig pipeline.
+
+- model pusher do not need any constant, then go for update entities and update components then go for training pipeline.
+
+- for model_prediction, first update constants and entities
