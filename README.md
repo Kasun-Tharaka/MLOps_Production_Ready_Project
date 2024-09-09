@@ -104,4 +104,6 @@ after create system environment variables for above credentials.
 
 - model pusher do not need any constant, then go for update entities and update components then go for training pipeline.
 
-- for model_prediction, first update constants and entities
+- for model_prediction, first update constants and entities.
+
+- for user API, here we use Fist API for it, create folders called templates whhich contains HTML related codes and create static folder to keep css codes. Then write app.py
